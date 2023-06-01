@@ -12,7 +12,7 @@ function App() {
         const response = await axios.post('http://localhost:4000/books',{title})
         setBooks([...books,response.data])
     }
-
+ 
     const fetchBooks = async ()=>{
         const response = await axios.get('http://localhost:4000/books')
         setBooks(response.data)
@@ -55,4 +55,4 @@ function App() {
     );
 }
 
-export default App;
+export default App
