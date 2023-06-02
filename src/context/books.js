@@ -33,7 +33,15 @@ function Provider({ children }){
       }))
     }
 
-    return <BooksContext.Provider value={{}}>
+    const valueToShare = {
+        books,
+        deleteBookByID,
+        createBook,
+        editBookById,
+        fetchBooks
+    }
+
+    return <BooksContext.Provider value={{valueToShare}}>
         {children}
     </BooksContext.Provider>
 
