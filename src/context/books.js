@@ -6,7 +6,9 @@ const BooksContext = createContext()
 function Provider({ children }){
     
     const [books,setBooks] = useState([])
+    
     const fetchBooks = async ()=>{
+        console.log("haha")
         const response = await axios.get('http://localhost:4000/books')
         setBooks(response.data)
     }
@@ -35,13 +37,13 @@ function Provider({ children }){
 
     const valueToShare = {
         books,
-        deleteBookByID,
+        fetchBooks,
         createBook,
         editBookById,
-        fetchBooks
+        deleteBookByID,
     }
 
-    return <BooksContext.Provider value={{valueToShare}}>
+    return <BooksContext.Provider value={valueToShare}>
         {children}
     </BooksContext.Provider>
 

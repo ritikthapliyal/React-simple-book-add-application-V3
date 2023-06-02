@@ -8,7 +8,7 @@ function BookList() {
 
     return (
         <div className='booklist'>{
-            books.length > 0 
+            books && books.length > 0 
             ?   books.map((book)=>{
                     return <BookShow key={book.id} book={book}/>
             })

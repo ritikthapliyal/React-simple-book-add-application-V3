@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import BooksContext from '../context/books'
 
-function BookEdit({id,handleEdit,onEdit}) {
+function BookEdit({id,handleEdit}) {
 
     const [title,setTitle] = useState('')
+    const {editBookById} = useContext(BooksContext)
 
     const handleClick = ()=>{
-        onEdit(id,title)
+        editBookById(id,title)
         handleEdit(false)
     }
 
